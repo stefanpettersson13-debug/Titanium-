@@ -110,7 +110,7 @@ if(/(rakna|berakna|hur mycket|hur manga)/.test(q)&&q.includes('bar')&&q.includes
 else{const found=answers.find(a=>a.terms.some(t=>q.includes(norm(t))));if(found)bubble(found.text)}
 const matches=matchTools(q);
 if(matches.length){bubble('Jag hittade verktyg som kan passa:');matches.forEach(t=>action('↗ '+t.name,()=>openTool(t)))}
-else if(!answers.some(a=>a.terms.some(t=>q.includes(norm(t))))){bubble('Jag kan inte tolka den frågan säkert ännu. Prova ett teknikord, till exempel ”ORFS”, ”tryckfall”, ”lager” eller ”sinuslinjal”. Du kan också söka bland alla verktyg på startsidan.')}
+else if(!answers.some(a=>a.terms.some(t=>q.includes(norm(t))))){bubble('Min lokala kunskapsbank har inte ett säkert svar på just den frågan. Prova ett teknikord, till exempel ”ORFS”, ”tryckfall”, ”lager” eller ”sinuslinjal”. Du kan också söka bland alla verktyg på startsidan.')}
 }
 function show(){panel.hidden=false;toggle.setAttribute('aria-expanded','true');if(!greeted){bubble('Hej! Jag heter My 🌸 Jag kan hjälpa dig hitta rätt verktyg och förklara tekniska begrepp. Vad behöver du hjälp med?');greeted=true}input.focus()}
 function hide(){panel.hidden=true;toggle.setAttribute('aria-expanded','false');toggle.focus()}

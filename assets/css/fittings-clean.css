@@ -1,0 +1,32 @@
+/* PassBit mobile-first fitting database refinement */
+#fittings .pb37-atlas{max-width:1100px;margin-inline:auto}
+#fittings .pb37-atlas>.section-kicker{font-size:11px;letter-spacing:.1em;opacity:.65}
+#fittings .pb37-atlas>h2{font-size:clamp(1.45rem,5vw,2.1rem);line-height:1.17;margin:8px 0 18px}
+#fittings .pb41-search{padding:16px!important;margin:0 0 14px!important;border-radius:18px!important;box-shadow:none!important}
+#fittings .pb41-search .section-kicker{display:none}
+#fittings .pb37-search-label{font-size:14px!important;font-weight:650!important}
+#fittings #pb37-search{width:100%;min-height:50px;font-size:16px!important;border-radius:12px!important;margin-top:8px}
+#fittings .pb41-suggestions{display:flex!important;gap:7px!important;flex-wrap:nowrap!important;overflow-x:auto!important;padding:8px 0 2px;scrollbar-width:none}
+#fittings .pb41-suggestions button{white-space:nowrap!important;flex:0 0 auto!important;font-size:12px!important;padding:9px 11px!important;border-radius:999px!important}
+#fittings #pb37-filters{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;gap:7px!important;padding:6px 0 10px!important;scrollbar-width:none}
+#fittings #pb37-filters button{flex:0 0 auto!important;white-space:nowrap!important;font-size:12px!important;padding:9px 13px!important;border-radius:999px!important}
+#fittings .pb42-callout{display:none!important}
+#fittings .pb37-feature{margin:0!important;box-shadow:none!important}
+#fittings .pb37-feature strong{font-size:15px!important}
+#fittings .pb37-feature p{font-size:13px!important;line-height:1.5!important}
+#fittings .pb37-atlas>.note{font-size:13px!important;line-height:1.5!important}
+#fittings .pb-fitting-help{margin:0 0 14px;border:1px solid rgba(150,175,194,.3);border-radius:14px;overflow:hidden}
+#fittings .pb-fitting-help summary{cursor:pointer;list-style:none;padding:13px 15px;font-size:14px;font-weight:650}
+#fittings .pb-fitting-help summary::after{content:'⌄';float:right}
+#fittings .pb-fitting-help[open] summary::after{content:'⌃'}
+#fittings .pb-fitting-help>.pb-fitting-help-body{padding:0 14px 14px}
+#fittings .pb-fitting-help .pb37-feature{background:transparent!important;border:0!important;padding:0!important}
+#fittings #pb37-list{margin-top:8px}
+@media(max-width:600px){
+ #fittings>.panel{padding:14px!important}
+ #fittings .pb37-atlas>h2{margin-bottom:12px!important}
+ #fittings .pb41-search{padding:13px!important}
+ #fittings .pb37-list{gap:10px!important}
+ #fittings .pb37-list>*{min-width:0!important}
+ #fittings .pb38-builder{margin-top:18px!important}
+}

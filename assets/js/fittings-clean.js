@@ -20,8 +20,20 @@ function init(){
   search.insertAdjacentElement('afterend',details);
  }
  const callout=panel.querySelector(':scope > .pb42-callout');if(callout)callout.remove();
+ const builder=document.querySelector('#fittings .pb38-builder');
+ if(builder&&!builder.closest('details')){
+  const details=document.createElement('details');details.className='pb-fitting-help pb-fitting-builder';
+  const summary=document.createElement('summary');summary.textContent='Bygg en koppling';
+  builder.before(details);details.append(summary,builder);
+ }
  const field=document.getElementById('pb37-search');
- if(field)field.placeholder='Sök GE, T-koppling, skärring…';
+ if(field){
+ field.placeholder='Sök GE, T-koppling, skärring…';
+ const clear=document.createElement('button');clear.type='button';clear.className='pb-fitting-clear';clear.textContent='Rensa sökning';clear.hidden=!field.value;
+ clear.addEventListener('click',()=>{field.value='';field.dispatchEvent(new Event('input',{bubbles:true}));field.focus()});
+ field.addEventListener('input',()=>{clear.hidden=!field.value});
+ field.after(clear);
+ }
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();

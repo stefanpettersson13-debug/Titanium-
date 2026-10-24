@@ -1,0 +1,23 @@
+#skf{max-width:1100px;margin:auto}
+#skf .skf-intro{font-size:clamp(24px,5vw,36px);margin:8px 0}
+#skf .skf-toolbar,#skf .skf-tabs,#skf .skf-actions{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+#skf .skf-toolbar input{flex:1;min-width:180px;margin:0;font-size:16px}
+#skf button{min-height:44px;cursor:pointer}
+#skf .skf-tabs{border-bottom:1px solid #718b9a55;padding-bottom:12px}
+#skf .skf-tabs button{padding:10px 15px;border-radius:999px}
+#skf .skf-tabs button[aria-selected="true"]{background:#b5e6f4;color:#112331;border-color:#b5e6f4}
+#skf [hidden]{display:none!important}
+#skf .skf-card{border:1px solid #718b9a55;border-radius:14px;margin:10px 0;overflow:hidden}
+#skf summary{padding:16px;cursor:pointer;font-weight:650}
+#skf .skf-card p{padding:0 16px 16px;margin:0;line-height:1.65}
+#skf .skf-suffix{padding:14px 0;border-bottom:1px solid #718b9a44}
+#skf p{line-height:1.6}
+#skf .skf-suffix p{margin:6px 0}
+#skf .skf-table{overflow-x:auto}
+#skf table{border-collapse:collapse;width:100%;min-width:530px;font-size:14px}
+#skf td,#skf th{text-align:left;padding:12px 10px;border-bottom:1px solid #718b9a55;vertical-align:top}
+#skf caption{text-align:left;font-weight:650;margin-bottom:12px}
+#skf .skf-structure{width:100%;max-width:520px;display:block;margin:20px auto}
+#skf a{color:inherit;text-decoration:underline}
+#skf button:focus-visible,#skf summary:focus-visible{outline:2px solid #55b8e5;outline-offset:3px}
+@media(max-width:600px){#skf>.panel{padding:16px}#skf .skf-tabs{gap:6px}#skf .skf-tabs button{font-size:13px;padding:9px 12px}}

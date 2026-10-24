@@ -5,7 +5,7 @@ workshop:{title:'Verkstadsteknik',tier:'FREE',groups:[
 ['Snabbberäkningar',['holes','screws','sin','convert','cutting']],
 ['Maskiner & CNC',['cncpro','workshop10','drawings']],
 ['El & drivteknik',['electrical','elec3','mechgear','belt']],
-['Mekanik & montage',['mechbearing','mechbolt']]]},
+['Mekanik & montage',['skf','mechbearing','mechbolt']]]},
 grinding:{title:'Slipteknik',tier:'PRO',groups:[
 ['Slipprocess',['grinding','grindpro','grindwheel']],
 ['Termik & krympning',['shrink','thermal']],

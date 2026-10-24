@@ -29,7 +29,7 @@ function sinCalc(){
  <p class="note">SIN använder ${f(l)} mm längs sinuslinjalen. TAN använder ${f(l)} mm horisontellt.</p>`;
  $('sendBlocks').onclick=()=>{const rounded=Math.round(s*1000)/1000;setTab('blocks');$('target').value=rounded.toFixed(3).replace('.',',');findBlocks();const delta=(rounded-s)*1000;const info=document.createElement('p');info.className='pb-round-note';info.textContent='Beräknad höjd: '+s.toFixed(6).replace('.',',')+' mm · passbitsmål: '+rounded.toFixed(3).replace('.',',')+' mm · avrundningsavvikelse: '+(delta>=0?'+':'')+delta.toFixed(3).replace('.',',')+' µm.';$('blockResults').prepend(info);window.scrollTo({top:0,behavior:'instant'})};
 }
-const toolNames={skf:'SKF · Lagerbibliotek',sin:'Sinuslinjal',blocks:'Passbitsbyggare',fits:'ISO-passningar',holes:'Borr & brotsch',screws:'Skruv & nycklar',convert:'mm ↔ inch',thermal:'Temperatur',cutting:'Skärdata',grinding:'Slipdata',stock:'Mitt passbitsset',runout:'Kast & excentricitet',chain:'Toleranskedjor',shrink:'Krymp- och presspassning',measure:'Mätprotokoll',metrology:'Mätteknik',alignment:'Maskingeometri',cncpro:'CNC-teknik',grindpro:'Slipteknik',field:'Fältservice & SAT/FAT',assistant:'Precision Assistant',analysis10:'Rundhetsanalys',diagnostic10:'Diagnostik · Slipning & spindel',fittings:'KOPPLINGSDATABAS · Sök & bygg',workshop10:'Verkstadsreferens',reports10:'Kontrollrapporter',sinumerik:'SINUMERIK ONE',abbrobot:'ABB Robotar',pneumatics:'Pneumatik · Festo',cylinders:'Cylindrar & sensorer',drawings:'Ritningsläsning',electrical:'Elscheman'};
+const toolNames={oils:'Oljor & smörjning',skf:'SKF · Lagerbibliotek',sin:'Sinuslinjal',blocks:'Passbitsbyggare',fits:'ISO-passningar',holes:'Borr & brotsch',screws:'Skruv & nycklar',convert:'mm ↔ inch',thermal:'Temperatur',cutting:'Skärdata',grinding:'Slipdata',stock:'Mitt passbitsset',runout:'Kast & excentricitet',chain:'Toleranskedjor',shrink:'Krymp- och presspassning',measure:'Mätprotokoll',metrology:'Mätteknik',alignment:'Maskingeometri',cncpro:'CNC-teknik',grindpro:'Slipteknik',field:'Fältservice & SAT/FAT',assistant:'Precision Assistant',analysis10:'Rundhetsanalys',diagnostic10:'Diagnostik · Slipning & spindel',fittings:'KOPPLINGSDATABAS · Sök & bygg',workshop10:'Verkstadsreferens',reports10:'Kontrollrapporter',sinumerik:'SINUMERIK ONE',abbrobot:'ABB Robotar',pneumatics:'Pneumatik · Festo',cylinders:'Cylindrar & sensorer',drawings:'Ritningsläsning',electrical:'Elscheman'};
 function showHome(){
  document.body.classList.add('home-view');
  window.fromSettingsGauge=false;
@@ -42,7 +42,7 @@ function showHome(){
  $('toolBar').classList.add('hidden');
  $('currentTool').classList.add('hidden');
  $('utilityStatus').classList.add('hidden');
- ['sin','blocks','fits','holes','screws','convert','thermal','cutting','grinding','stock','runout','chain','shrink','measure','metrology','alignment','cncpro','grindpro','field','assistant','analysis10','diagnostic10','workshop10','reports10','sinumerik','abbrobot','pneumatics','cylinders','drawings','electrical','fittings','skf'].forEach(id=>$(id).classList.add('hidden'));
+ ['sin','blocks','fits','holes','screws','convert','thermal','cutting','grinding','stock','runout','chain','shrink','measure','metrology','alignment','cncpro','grindpro','field','assistant','analysis10','diagnostic10','workshop10','reports10','sinumerik','abbrobot','pneumatics','cylinders','drawings','electrical','fittings','skf','oils'].forEach(id=>$(id).classList.add('hidden'));
  window.scrollTo({top:0,behavior:'smooth'});
 }
 function setTab(id){
@@ -63,7 +63,7 @@ function setTab(id){
  $('currentTool').classList.remove('hidden');
  $('utilityStatus').classList.remove('hidden');
  $('currentTool').textContent=toolNames[id]||'Verktyg';
- document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));const locked=!window.passbitCanUse(id);['sin','blocks','fits','holes','screws','convert','thermal','cutting','grinding','stock','runout','chain','shrink','measure','metrology','alignment','cncpro','grindpro','field','assistant','analysis10','diagnostic10','workshop10','reports10','sinumerik','abbrobot','pneumatics','cylinders','drawings','electrical','fittings','skf'].forEach(x=>$(x).classList.toggle('hidden',locked||x!==id));window.scrollTo({top:0,behavior:'instant'})}
+ document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));const locked=!window.passbitCanUse(id);['sin','blocks','fits','holes','screws','convert','thermal','cutting','grinding','stock','runout','chain','shrink','measure','metrology','alignment','cncpro','grindpro','field','assistant','analysis10','diagnostic10','workshop10','reports10','sinumerik','abbrobot','pneumatics','cylinders','drawings','electrical','fittings','skf','oils'].forEach(x=>$(x).classList.toggle('hidden',locked||x!==id));window.scrollTo({top:0,behavior:'instant'})}
 document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{setTab(b.dataset.tab);window.scrollTo({top:0,behavior:'instant'})});
 document.querySelectorAll('[data-angle]').forEach(b=>b.onclick=()=>{$('angle').value=b.dataset.angle;sinCalc()});
 ['angle','length'].forEach(id=>$(id+'Slider').addEventListener('input',()=>{$(id).value=$(id+'Slider').value.replace('.',',');sinCalc()}));

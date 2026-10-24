@@ -30,3 +30,9 @@
  #fittings .pb37-list>*{min-width:0!important}
  #fittings .pb38-builder{margin-top:18px!important}
 }
+
+#fittings .pb-fitting-clear{margin:8px 0 0;padding:8px 12px;font-size:13px}
+#fittings .pb-fitting-clear[hidden]{display:none!important}
+#fittings .pb-fitting-builder>.pb38-builder{margin:0!important;border:0!important;box-shadow:none!important}
+#fittings .pb-fitting-help summary:focus-visible{outline:2px solid currentColor;outline-offset:-4px}
+@media(max-width:600px){#fittings #pb37-list{display:grid!important;grid-template-columns:minmax(0,1fr)!important}}
